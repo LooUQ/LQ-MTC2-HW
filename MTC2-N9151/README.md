@@ -36,9 +36,7 @@ If you are new to ***Nordic nRF Connect*** consider investing time in completing
 ## Creating Your Own MTC2-N9151 Host 
 LooUQ uses DipTrace as our PCB design suite. It has a complete set of tools for schematic creation, PCB layout, and maintaining component libraries. For information about DipTrace and how to use it see...[Get Diptrace](https://diptrace.com/). LooUQ has been using DipTrace as our electronics design tool since 2016 and we are proud to proclaim it's virtues: reasonable cost, wide support, comprehensive set of tooling; give it a try.
 
-
-
-
+Given that there are multiple tools out there for PCB design/develoment, LooUQ is sharing our open-hardware designs in both DipTrace and Eagle formats. Eagle is a widely supported format for schematic and PCB board layouts. Both of the host boards above are available in the Boards folder of this repository. Depending on your needs either could be a good starting point for integration into your project.
 
 
 ## MTC2-N9151 Support Team
