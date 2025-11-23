@@ -38,6 +38,22 @@ LooUQ uses DipTrace as our PCB design suite. It has a complete set of tools for 
 
 Given that there are multiple tools out there for PCB design/develoment, LooUQ is sharing our open-hardware designs in both DipTrace and Eagle formats. Eagle is a widely supported format for schematic and PCB board layouts. Both of the host boards above are available in the Boards folder of this repository. Depending on your needs either could be a good starting point for integration into your project.
 
+Nordic documentation about the nRF9151 SIP applies to the LooUQ MTC2-9151; all limits should be observed. The MTC2-N9151 will draw slightly more power depending on operating state. GNSS has power draw for either the on-board LNA chip and optionally the external LNA power injection circuit. The N9151 also has 2 LEDs (power-green, network-blue), which can be individually disabled by cutting a jumper. LooUQ can deliver the MTC2-N9151 with custom LNA or LED configurations (note MOQ is required).
 
-## MTC2-N9151 Support Team
-In addition to the N9151 modem, LooUQ has created other devices, such as the MTC2-N9151-Breakout and the MTC2-N9151-UXplor boards. These devices make development on the N9151 easier for you and your team. Both the breakout and UXplor boards are open-source hardware. You will find design files in DipTrace (and Eagle *.sch / *.brd) format is the folders for each product. 
+### Interfacing to the N9151
+* Physical layout
+* Power
+    * VDD: 3.0v - 5.5v (LooUQ has observed that when VDD is above 4.5v, a VIO of 1.8v has issues)
+    * VIO: 1.7v to 3.6v
+    * The UXplor VDD is 3.8v and VIO is selectable at 3.3v or 1.8v
+* Flash/debug requires connectivity to the 2 SWD pins (both the Breakout and UXplor expose these signals to a 10-pin Cortex header)
+* Both LTE/DECT and GNSS antennas are directly connected to the MTC2-N9151 via U.FL connectors
+
+**Host Physical Board Layout**
+The physical connection between the MTC2-N9151 and the host PCB is accomplished with 3 parts in the configuration below.
+* TE 1-2199230-6 (M.2 Key-M)
+* Wurth 9774025151R (M2.5 stand-off, soldered)
+* 2.5M x 8mm hex head bolt (fully-threaded, course)
+
+![physical](images/MTC2-Physical.png)
+
