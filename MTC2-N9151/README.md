@@ -55,5 +55,5 @@ The physical connection between the MTC2-N9151 and the host PCB is accomplished 
 * Wurth 9774025151R (M2.5 stand-off, soldered)
 * 2.5M x 8mm hex head bolt (fully-threaded, course)
 
-![physical](images/MTC2-Physical.png)
+![screenshot](images/MTC2-Physical.png)
 
